@@ -1,0 +1,26 @@
+syntax = "proto3";
+option java_multiple_files =  true;
+
+package example;
+
+service Greeter {
+  rpc sayHello (HelloRequest) returns (HelloResponse);
+  rpc combineStrings (StringsInput) returns (CombinedStringResponse);
+}
+
+message HelloRequest {
+  string name = 1;
+}
+
+message HelloResponse {
+  string message = 1;
+}
+
+message StringsInput {
+  string string1 = 1;
+  string string2 = 2;
+}
+
+message CombinedStringResponse {
+  string combinedString = 1;
+}
